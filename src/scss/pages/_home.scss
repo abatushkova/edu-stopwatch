@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+  padding: 28px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background-color: $primary;
+  text-align: center;
+
+  &__timer {
+    font: 3.6rem/4.4rem a;
+    font-family: inherit;
+  }
+  
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+}

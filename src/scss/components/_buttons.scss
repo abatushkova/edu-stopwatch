@@ -1,0 +1,16 @@
+.button {
+  font: 1.6rem/2.4rem a;
+  font-family: inherit;
+
+  &--gray {
+    color: $gray-c;
+  }
+
+  &--green {
+    color: $green;
+  }
+
+  &--red {
+    color: $red;
+  }
+}
