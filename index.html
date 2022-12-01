@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./src/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./src/favicons/favicon-16x16.png">
+  <link rel="manifest" href="./src/favicons/site.webmanifest">
+  <link rel="icon" href="./src/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#e5eadc">
+  <meta name="msapplication-TileImage" content="./src/favicons/mstile-180x180.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="./src/index.min.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="stopwatch">
+      <h1 id="timer" class="stopwatch__timer"></h1>
+      <div class="stopwatch__content">
+        <button type="button" id="reset" class="button button--gray">Reset</button>
+        <button type="button" id="start" class="button button--green">Start</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/index.js"></script>
+</body>
+</html>
