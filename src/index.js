@@ -9,8 +9,8 @@ const resetTimer = () => {
   clearInterval(interval);
   ss = 0;
   timer.textContent = '00:00:00';
-  toggleBtn.classList.replace('button--red', 'button--green');
   toggleBtn.textContent = 'Start';
+  toggleBtn.classList.replace('button--stop', 'button--start');
   flag = 'stop';
 };
 
@@ -18,7 +18,7 @@ const updateTimer = () => {
   ss++;
 
   let hrs = Math.floor(ss / 3600);
-  let mins = Math.floor((ss - hrs / 3600) / 60);
+  let mins = Math.floor((ss - (hrs * 3600)) / 60);
   let secs = ss % 60;
 
   if (hrs < 10) hrs = `0${hrs}`;
@@ -41,13 +41,13 @@ const stopTimer = () => {
 const toggleTimer = () => {
   if (flag === 'stop') {
     startTimer();
-    toggleBtn.classList.replace('button--green', 'button--red');
     toggleBtn.textContent = 'Stop';
+    toggleBtn.classList.replace('button--start', 'button--stop');
     flag = 'start';
   } else {
     stopTimer();
-    toggleBtn.classList.replace('button--red', 'button--green');
     toggleBtn.textContent = 'Start';
+    toggleBtn.classList.replace('button--stop', 'button--start');
     flag = 'stop';
   }
 };
