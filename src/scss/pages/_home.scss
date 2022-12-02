@@ -7,22 +7,23 @@
   justify-content: center;
   height: 100%;
   padding: 0 10px;
-  background-color: $primary;
 }
 
 .stopwatch {
-  display: flex;
-  flex-direction: column;
-  max-width: 320px;
-  width: 100%;
-  padding: 28px;
-  border-radius: 16px;
-  box-sizing: border-box;
-  background-color: $blue-dark;
-  text-align: center;
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
-  @include tablet {
-    max-width: 400px;
+    @include tablet {
+      width: 320px;
+      height: 320px;
+    }
   }
 
   &__timer {
@@ -35,9 +36,16 @@
     }
   }
 
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 70px;
+  &__toggle-btn {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  &__reset-btn {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
   }
 }

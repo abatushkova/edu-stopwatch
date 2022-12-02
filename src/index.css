@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
 html, body {
   height: 100%;
 }
@@ -12,10 +12,10 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   line-height: 1.5;
-  background-color: #111;
-  color: #fff;
+  background-color: #fff;
+  color: #111;
   overflow-x: hidden;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Roboto Mono", monospace;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -108,42 +108,46 @@ a {
 }
 
 .button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  height: 40px;
   color: #fff;
-  font: 500 1.2rem/1.6rem a;
+  font: 500 1.4rem/2rem a;
   font-family: inherit;
   -webkit-transition: background-color 300ms cubic-bezier(0.2, 0, 0, 1);
   transition: background-color 300ms cubic-bezier(0.2, 0, 0, 1);
+  text-align: center;
   text-transform: uppercase;
   cursor: pointer;
 }
-@media only screen and (min-width: 769px) {
-  .button {
-    width: 70px;
-    height: 70px;
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
+.button--filled {
+  padding: 0 24px;
+  border-radius: 20px;
 }
-.button--gray {
-  background-color: #999;
+.button--round {
+  border-radius: 50%;
 }
-.button--gray:focus, .button--gray:hover {
-  background-color: #adadad;
+.button--reset, .button--start {
+  background-color: #e6a03a;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-.button--green {
-  background-color: #487b3e;
+.button--reset:focus, .button--reset:hover, .button--start:focus, .button--start:hover {
+  background-color: #eab15d;
 }
-.button--green:focus, .button--green:hover {
-  background-color: #58954b;
+.button--reset:active, .button--start:active {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-.button--red {
-  background-color: #e96d70;
+.button--stop {
+  background-color: #b43236;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-.button--red:focus, .button--red:hover {
-  background-color: #ef9596;
+.button--stop:focus, .button--stop:hover {
+  background-color: #cf4f53;
+}
+.button--stop:active {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .wrapper {
@@ -162,33 +166,33 @@ a {
           justify-content: center;
   height: 100%;
   padding: 0 10px;
-  background-color: #faf2f1;
 }
 
-.stopwatch {
+.stopwatch__container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 300px;
-  width: 100%;
-  padding: 28px;
-  border-radius: 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #333b63;
-  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 @media only screen and (min-width: 769px) {
-  .stopwatch {
-    max-width: 400px;
+  .stopwatch__container {
+    width: 320px;
+    height: 320px;
   }
 }
 .stopwatch__timer {
-  font: 3.6rem/4.4rem a;
+  font: 4.5rem/5.2rem a;
   font-family: inherit;
 }
 @media only screen and (min-width: 769px) {
@@ -197,12 +201,14 @@ a {
     line-height: 6.4rem;
   }
 }
-.stopwatch__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-top: 70px;
+.stopwatch__toggle-btn {
+  width: 100%;
+  margin-top: 40px;
+}
+.stopwatch__reset-btn {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
 }
