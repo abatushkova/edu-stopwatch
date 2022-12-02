@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./src/favicons/favicon-16x16.png">
   <link rel="manifest" href="./src/favicons/site.webmanifest">
   <link rel="icon" href="./src/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#e5eadc">
+  <meta name="msapplication-TileColor" content="#e6a03a">
   <meta name="msapplication-TileImage" content="./src/favicons/mstile-180x180.png">
   <meta name="theme-color" content="#ffffff">
 
@@ -20,11 +20,11 @@
 <body>
   <div class="wrapper">
     <div class="stopwatch">
-      <h1 id="timer" class="stopwatch__timer">00:00:00</h1>
-      <div class="stopwatch__content">
-        <button type="button" id="reset" class="button button--gray">Reset</button>
-        <button type="button" id="toggle" class="button button--green">Start</button>
+      <div class="stopwatch__container">
+        <h1 id="timer" class="stopwatch__timer">00:00:00</h1>
+        <button type="button" id="reset" class="button button--reset button--round stopwatch__reset-btn">Reset</button>
       </div>
+      <button type="button" id="toggle" class="button button--start button--filled stopwatch__toggle-btn">Start</button>
     </div>
   </div>
 
